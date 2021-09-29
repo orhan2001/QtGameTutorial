@@ -3,7 +3,7 @@
 #include "Tower.h"
 #include "Bullet.h"
 
-Game::Game(): QGraphicsView(){
+Game::Game(){
     // create a scene
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0,0,800,600);
@@ -13,7 +13,6 @@ Game::Game(): QGraphicsView(){
 
     // create a tower
     Tower * t = new Tower();
-    t->setPos(100,100);
 
     // add the tower to scene
     scene->addItem(t);

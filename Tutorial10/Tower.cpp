@@ -3,16 +3,11 @@
 #include <QVector>
 #include <QPointF>
 #include <QPolygonF>
-#include "Bullet.h"
-#include <QPointF>
-#include <QLineF>
-#include "Game.h"
-#include <QTimer>
-#include <QGraphicsRectItem>
 
-extern Game * game;
+// list of points: (1,0), (2,0), (3,1), (3,2), (2,3), (1,3), (0,2), (0,1)
 
-Tower::Tower(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
+
+Tower::Tower(QGraphicsItem *parent){
     // set the graphics
     setPixmap(QPixmap(":/images/tower.png"));
 
@@ -37,4 +32,6 @@ Tower::Tower(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     QPointF tower_center(x()+44,y()+44);
     QLineF ln(poly_center,tower_center);
     attack_area->setPos(x()+ln.dx(),y()+ln.dy());
+
+
 }

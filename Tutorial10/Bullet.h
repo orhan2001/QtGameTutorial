@@ -11,6 +11,7 @@ public:
     Bullet(QGraphicsItem * parent=0);
 public slots:
     void move();
+private:
 };
 
 #endif // BULLET_H

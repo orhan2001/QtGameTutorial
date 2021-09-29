@@ -2,14 +2,9 @@
 #include <QPixmap>
 #include <QTimer>
 #include <qmath.h> // qSin, qCos, qTan
-#include "Game.h"
-
-extern Game * game;
-
-Bullet::Bullet(QGraphicsItem *parent): QObject(),QGraphicsPixmapItem(parent){
+Bullet::Bullet(QGraphicsItem *parent){
     // set graphics
     setPixmap(QPixmap(":images/arrow.png"));
-
 
     // connect a timer to move()
     QTimer * move_timer = new QTimer(this);
@@ -28,5 +23,4 @@ void Bullet::move(){
     double dx = STEP_SIZE * qCos(qDegreesToRadians(theta));
 
     setPos(x()+dx, y()+dy);
-
 }
